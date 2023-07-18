@@ -37,6 +37,9 @@
         }
         .logo_ft {
             width: 80%;
+            @include max(560px) {
+                width: 50%;
+            }
         }
         .ft_list {
             li {

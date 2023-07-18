@@ -839,7 +839,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-            @include max(767px) {
+            @include max(1400px) {
                 flex-wrap: wrap;
                 justify-content: center;
                 width: 100%;
@@ -1081,7 +1081,7 @@
             justify-content: space-evenly;
             align-items: center;
             margin-bottom: 2rem;
-            @include max(767px) {
+            @include max(1400px) {
                 width: 100%;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -1271,7 +1271,7 @@
     background: linear-gradient(180deg, #7B24B9 0%, rgba(123, 36, 185, 0.00) 100%);
     position: relative;
     padding-top: 5rem;
-    @include max(991px) {
+    @include max(1300px) {
         margin-top: -1px;
     }
     .img_cap_header {
