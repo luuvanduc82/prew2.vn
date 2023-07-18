@@ -1,0 +1,452 @@
+@import url("../assets/font/Inter/stylesheets.css");
+@import url("../assets/font/Oswald/stylesheets.css");
+// @import url("../assets/font/Roboto/stylesheet.css");
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    @media screen and (min-width: 2000px) {
+        font-size: 100%;
+    }
+}
+
+body {
+    font-family: 'Inter';
+    font-size: 16px;
+    line-height: 1.55;
+    font-weight: 400;
+    color: #000000;
+    overflow: hidden auto;
+    @media screen and (min-width: 2000px) {
+        font-size: 20px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+select {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+}
+
+input,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @include font-pri;
+}
+
+.main {
+    min-height: 68vh;
+    // padding-top: var(--size-hd);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+.btn {
+    border-radius: .8rem;
+    padding: 1rem;
+    color: $color_white;
+    font-weight: 600;
+    font-family: 'Inter';
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(49deg, #F9B840 0%, #F95B34 100%);
+        right: 0;
+        top: 0;
+        transition: all 0.5s ease-in-out;
+        z-index: -1;
+    }
+    &:hover {
+        color: $color_white!important;
+        &::after {
+            width: 100%;
+            left: 0;
+            right: unset;
+        }
+    }
+    @include max(560px) {
+        @include fz_14;
+    }
+}
+
+.btn_second {
+    padding: 1.6rem;
+    @include max(767px) {
+        padding: 1.2rem;
+        font-size: 1.3rem;
+    }
+}
+
+.btn_orange_2 {
+    background: $color_orange_2;
+    @include fz_16;
+    @include max(767px) {
+        @include fz_14;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.over {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.no-scroll {
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+iframe {
+    vertical-align: middle;
+}
+
+.load-item {
+    display: none;
+}
+
+.show-hide-toggle {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    border-radius: inherit;
+    height: auto;
+}
+
+.global-title {
+    max-width: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.wow {
+    animation-duration: 1s;
+}
+
+.wow {
+    visibility: hidden;
+}
+
+.row {
+    display: flex;
+    @media screen and (max-width: 767px) {
+        flex-wrap: wrap;
+    }
+}
+
+.d_flex {
+    display: flex;
+}
+
+.d_none {
+    display: none;
+}
+
+.col_12 {
+    width: 100%;
+}
+
+.col_11 {
+    width: 91.66%;
+}
+
+.col_10 {
+    width: 83.33%;
+}
+
+.col_9 {
+    width: 75%;
+}
+
+.col_8 {
+    width: 66.66%;
+}
+
+.col_7 {
+    width: 58.33%
+}
+
+.col_6 {
+    width: 50%;
+}
+
+.col_5 {
+    width: 41.66%;
+}
+
+.col_4 {
+    width: 33.33%;
+}
+
+.col_3 {
+    width: 25%;
+}
+
+.col_2 {
+    width: 16.66%;
+}
+
+.col_1 {
+    width: 8.33%;
+}
+
+.col {
+    width: auto;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.text_right {
+    text-align: right;
+}
+
+@include min(1400px) {
+    .col_xxl_12 {
+        width: 100%;
+    }
+    .col_xxl_11 {
+        width: 91.66%;
+    }
+    .col_xxl_10 {
+        width: 83.33%;
+    }
+    .col_xxl_9 {
+        width: 75%;
+    }
+    .col_xxl_8 {
+        width: 66.66%;
+    }
+    .col_xxl_7 {
+        width: 58.33%
+    }
+    .col_xxl_6 {
+        width: 50%;
+    }
+    .col_xxl_5 {
+        width: 41.66%;
+    }
+    .col_xxl_4 {
+        width: 33.33%;
+    }
+    .col_xxl_3 {
+        width: 25%;
+    }
+    .col_xxl_2 {
+        width: 16.66%;
+    }
+    .col_xxl_1 {
+        width: 8.33%;
+    }
+}
+
+@include min(1200px) {
+    .col_xl_12 {
+        width: 100%;
+    }
+    .col_xl_11 {
+        width: 91.66%;
+    }
+    .col_xl_10 {
+        width: 83.33%;
+    }
+    .col_xl_9 {
+        width: 75%;
+    }
+    .col_xl_8 {
+        width: 66.66%;
+    }
+    .col_xl_7 {
+        width: 58.33%
+    }
+    .col_xl_6 {
+        width: 50%;
+    }
+    .col_xl_5 {
+        width: 41.66%;
+    }
+    .col_xl_4 {
+        width: 33.33%;
+    }
+    .col_xl_3 {
+        width: 25%;
+    }
+    .col_xl_2 {
+        width: 16.66%;
+    }
+    .col_xl_1 {
+        width: 8.33%;
+    }
+}
+
+.main {
+    overflow-x: hidden;
+}
+
+@include min(992px) {
+    .col_lg_12 {
+        width: 100%;
+    }
+    .col_lg_11 {
+        width: 91.66%;
+    }
+    .col_lg_10 {
+        width: 83.33%;
+    }
+    .col_lg_9 {
+        width: 75%;
+    }
+    .col_lg_8 {
+        width: 66.66%;
+    }
+    .col_lg_7 {
+        width: 58.33%
+    }
+    .col_lg_6 {
+        width: 50%;
+    }
+    .col_lg_5 {
+        width: 41.66%;
+    }
+    .col_lg_4 {
+        width: 33.33%;
+    }
+    .col_lg_3 {
+        width: 25%;
+    }
+    .col_lg_2 {
+        width: 16.66%;
+    }
+    .col_lg_1 {
+        width: 8.33%;
+    }
+}
+
+@include min(768px) {
+    .col_md_12 {
+        width: 100%;
+    }
+    .col_md_11 {
+        width: 91.66%;
+    }
+    .col_md_10 {
+        width: 83.33%;
+    }
+    .col_md_9 {
+        width: 75%;
+    }
+    .col_md_8 {
+        width: 66.66%;
+    }
+    .col_md_7 {
+        width: 58.33%
+    }
+    .col_md_6 {
+        width: 50%;
+    }
+    .col_md_5 {
+        width: 41.66%;
+    }
+    .col_md_4 {
+        width: 33.33%;
+    }
+    .col_md_3 {
+        width: 25%;
+    }
+    .col_md_2 {
+        width: 16.66%;
+    }
+    .col_md_1 {
+        width: 8.33%;
+    }
+}
+
+@include min(576px) {
+    .col_sm_12 {
+        width: 100%;
+    }
+    .col_sm_11 {
+        width: 91.66%;
+    }
+    .col_sm_10 {
+        width: 83.33%;
+    }
+    .col_sm_9 {
+        width: 75%;
+    }
+    .col_sm_8 {
+        width: 66.66%;
+    }
+    .col_sm_7 {
+        width: 58.33%
+    }
+    .col_sm_6 {
+        width: 50%;
+    }
+    .col_sm_5 {
+        width: 41.66%;
+    }
+    .col_sm_4 {
+        width: 33.33%;
+    }
+    .col_sm_3 {
+        width: 25%;
+    }
+    .col_sm_2 {
+        width: 16.66%;
+    }
+    .col_sm_1 {
+        width: 8.33%;
+    }
+}

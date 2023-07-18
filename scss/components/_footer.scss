@@ -1,0 +1,229 @@
+.footer {
+    background: linear-gradient(162deg, #461362 0%, rgba(176, 0, 96, 0.63) 99.99%);
+    padding-top: 13.8rem;
+    color: $color_white;
+    @include max(767px) {
+        padding-top: 5rem;
+    }
+    .row {
+        padding-bottom: 3.8rem;
+        @include max(991px) {
+            flex-wrap: wrap;
+        }
+        h3 {
+            font-size: 1.6rem;
+            color: $color_orange;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .col_4,
+        .col_lh {
+            padding-right: 8rem;
+            @include max(991px) {
+                width: 50%;
+            }
+            @include max(560px) {
+                width: 100%;
+            }
+        }
+        .col_2,
+        .col_3 {
+            @include max(991px) {
+                width: 50%;
+            }
+            @include max(560px) {
+                width: 100%;
+            }
+        }
+        .logo_ft {
+            width: 80%;
+        }
+        .ft_list {
+            li {
+                margin-bottom: 1rem;
+                a {
+                    transition: all 0.3s;
+                }
+                &:hover {
+                    a {
+                        color: $color_orange;
+                    }
+                }
+            }
+        }
+        .box_lh_ft {
+            display: flex;
+            column-gap: .8rem;
+            margin-bottom: 1rem;
+            i {
+                color: $color_orange;
+                margin-top: .5rem;
+            }
+        }
+        .form_ft_email {
+            padding: 5px 10px;
+            margin: 1rem 0 2rem;
+            display: flex;
+            border: 0.3px solid #ffffff63;
+            border-radius: 3rem;
+            input {
+                box-shadow: none;
+                background: transparent;
+                flex: 1;
+                border: none;
+                color: white;
+                padding: 1rem 0 1rem 1rem;
+                &:focus {
+                    outline: none;
+                }
+                &::placeholder {
+                    color: #ffffff63;
+                }
+            }
+            .btn_submit_mail {
+                color: $color_white;
+                background: $color_orange_2;
+                border-radius: 50%;
+                width: 3.2rem;
+                height: 3.2rem;
+            }
+        }
+        .footer_follows {
+            display: flex;
+            justify-content: space-between;
+            .footer_social {
+                display: flex;
+                column-gap: 1rem;
+                a {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    i {
+                        font-size: 1.2rem;
+                    }
+                    &:hover {
+                        animation: tada 1s infinite;
+                    }
+                }
+                .fb {
+                    background: #334C8C;
+                }
+                .ytube {
+                    background: #F20000;
+                }
+                .tiktok {
+                    background: black;
+                }
+                .insta {
+                    background: linear-gradient(#E09B3D, #C74C4D, #C21975, #7024C4);
+                }
+            }
+        }
+    }
+    .footer_mona {
+        text-align: center;
+        padding: 3.5rem 0 7.1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.10);
+        @include max(767px) {
+            padding: 2rem 0 3rem;
+        }
+    }
+}
+
+.social_contacts {
+    z-index: 9999;
+    position: fixed;
+    right: 25px;
+    bottom: 110px;
+    display: grid;
+    gap: 10px;
+    transform: translateX(8rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s;
+    @include max(560px) {
+        right: 1.5rem;
+    }
+    &.active {
+        transform: translateX(0rem);
+        opacity: 1;
+        visibility: visible;
+    }
+    a {
+        position: relative;
+        width: 50px;
+        background: $color_white;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: $color_white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 9px;
+        span {
+            position: absolute;
+            opacity: 0;
+            width: max-content;
+            transition: all .7s;
+            background: #F9841A;
+            right: 0;
+            border-radius: 3rem;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        i,
+        img {
+            animation: phoneRing 1s infinite;
+        }
+    }
+    .phone {
+        a {
+            border: 1px solid #F9841A;
+            background: transparent;
+            .phone_box {
+                overflow-y: hidden;
+                background: #f9831b;
+                width: 70%;
+                height: 70%;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 3.5rem;
+                i {
+                    z-index: 2;
+                    position: relative;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 90%;
+                    height: 90%;
+                    background: rgba(249, 132, 26, 0.40);
+                    left: 2px;
+                    top: 2px;
+                    border-radius: 50%;
+                    z-index: -1;
+                    animation: ZoomIn 2s infinite forwards;
+                }
+            }
+        }
+        &:hover {
+            span {
+                opacity: 1;
+                padding: 0 40px 0 20px;
+                right: calc(100% - 40px);
+                width: max-content;
+            }
+        }
+    }
+    .mess {
+        a {
+            color: #2196F3;
+            i {
+                font-size: 2rem;
+            }
+        }
+    }
+}
